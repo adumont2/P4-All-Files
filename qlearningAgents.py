@@ -141,6 +141,8 @@ class QLearningAgent(ReinforcementAgent):
 
           NOTE: You should never call this function,
           it will be called on your behalf
+          Q(s, a) <- (1 - alpha) * Q(s, a) + alpha * (r + gamma * V(s'))
+          where V(s') = max_a' Q(s', a')
         """
         "*** YOUR CODE HERE ***"
         #Get the old Q-value
@@ -227,6 +229,8 @@ class ApproximateQAgent(PacmanQAgent):
     def update(self, state, action, nextState, reward):
         """
            Should update your weights based on transition
+           w_i <- w_i + alpha * (difference) * f_i(s, a)
+           where difference = (r + gamma * V(s')) - Q(s, a)
         """
         "*** YOUR CODE HERE ***"
         # Calculate the difference: (r + gamma * V(s')) - Q(s, a)
