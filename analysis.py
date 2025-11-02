@@ -25,7 +25,9 @@ def question2():
       and set the corresponding value to whatever you think is an
       appropriate value.
     """
-    return 'discount', 0.99
+    # We return the values for *both* parameters.
+    # We change discount to 0.99 and leave noise at its default 0.2.
+    return 'discount', 0.99, 'noise', 0.2
 
 def question3a():
     """
